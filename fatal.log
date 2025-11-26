@@ -1,0 +1,46 @@
+[2025-11-19 15:36:48][FATAL] GameEngine failed the second half of initialization because an exception was encountered.
+
+java.lang.RuntimeException: Model not found: test_starfield_plane.obj
+	at whitetail.loaders.MeshFileParser.FromFile(MeshFileParser.java:24)
+	at whitetail.graphics.SpriteRenderer.Init(SpriteRenderer.java:35)
+	at whitetail.graphics.RenderContext.ActivateSpriteRenderer(RenderContext.java:42)
+	at production.GnomeGameEngine.onInit(GnomeGameEngine.java:27)
+	at whitetail.core.GameEngine.initSecondHalf(GameEngine.java:156)
+	at production.GnomeClient.main(GnomeClient.java:50)
+[2025-11-19 15:36:50][FATAL] Engine failed to init second half
+[2025-11-19 15:47:58][FATAL] GameEngine failed the second half of initialization because an exception was encountered.
+
+java.lang.RuntimeException: Problem creating MaterialD; shader doesn't have 'diffuse'
+	at whitetail.graphics.materials.MaterialD.<init>(MaterialD.java:19)
+	at production.GnomeGameEngine.onInit(GnomeGameEngine.java:40)
+	at whitetail.core.GameEngine.initSecondHalf(GameEngine.java:156)
+	at production.GnomeClient.main(GnomeClient.java:50)
+[2025-11-19 15:48:00][FATAL] Engine failed to init second half
+[2025-11-19 15:48:39][FATAL] GameEngine failed the second half of initialization because an exception was encountered.
+
+java.lang.RuntimeException: Problem creating MaterialD; shader doesn't have 'diffuse'
+	at whitetail.graphics.materials.MaterialD.<init>(MaterialD.java:19)
+	at production.GnomeGameEngine.onInit(GnomeGameEngine.java:40)
+	at whitetail.core.GameEngine.initSecondHalf(GameEngine.java:156)
+	at production.GnomeClient.main(GnomeClient.java:50)
+[2025-11-19 15:48:40][FATAL] Engine failed to init second half
+[2025-11-19 15:49:11][FATAL] GameEngine failed the second half of initialization because an exception was encountered.
+
+java.lang.RuntimeException: Problem creating MaterialD; shader doesn't have 'diffuse'
+	at whitetail.graphics.materials.MaterialD.<init>(MaterialD.java:19)
+	at production.GnomeGameEngine.onInit(GnomeGameEngine.java:40)
+	at whitetail.core.GameEngine.initSecondHalf(GameEngine.java:156)
+	at production.GnomeClient.main(GnomeClient.java:50)
+[2025-11-19 15:49:12][FATAL] Engine failed to init second half
+[2025-11-25 22:31:21][FATAL] GameEngine failed the second half of initialization because an exception was encountered.
+
+java.lang.NullPointerException
+	at production.text.MetaFile.processNextLine(MetaFile.java:71)
+	at production.text.MetaFile.loadPaddingData(MetaFile.java:145)
+	at production.text.MetaFile.<init>(MetaFile.java:47)
+	at production.text.TextMeshCreator.<init>(TextMeshCreator.java:14)
+	at production.text.FontType.<init>(FontType.java:22)
+	at production.GnomeGameEngine.onInit(GnomeGameEngine.java:120)
+	at whitetail.core.GameEngine.initSecondHalf(GameEngine.java:156)
+	at production.GnomeClient.main(GnomeClient.java:38)
+[2025-11-25 22:31:23][FATAL] Engine failed to init second half
