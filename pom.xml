@@ -31,6 +31,12 @@
             <version>${lwjgl.version}</version>
             <classifier>natives-windows</classifier>
         </dependency>
+        <dependency>
+            <groupId>org.lwjgl.lwjgl</groupId>
+            <artifactId>lwjgl-platform</artifactId>
+            <version>${lwjgl.version}</version>
+            <classifier>natives-linux</classifier>
+        </dependency>
     </dependencies>
 
     <build>
@@ -54,6 +60,20 @@
                         <phase>package</phase>
                         <goals>
                             <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.googlecode.mavennatives</groupId>
+                <artifactId>maven-nativedependencies-plugin</artifactId>
+                <version>0.0.7</version>
+                <executions>
+                    <execution>
+                        <id>unpacknatives</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>copy</goal>
                         </goals>
                     </execution>
                 </executions>
