@@ -3,6 +3,7 @@ package production.chat;
 import org.lwjgl.input.Keyboard;
 import production.KeyPresses;
 
+import static org.lwjgl.input.Keyboard.KEY_RETURN;
 import static whitetail.utility.ErrorHandler.LogFatalAndExit;
 
 public class ChatManager {
@@ -37,6 +38,9 @@ public class ChatManager {
                 sb.deleteCharAt(sb.length() - 1);
             } else if (!Character.isISOControl(character) && character != 0) {
                 sb.append(character);
+            } else if (code == KEY_RETURN) {
+                /* print to console for now, later render on screen */
+                System.out.println(GetCurrentMessage());
             }
         }
     }

@@ -3,6 +3,7 @@ package production;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
+import production.chat.ChatManager;
 import production.text.FontType;
 import production.text.GUIText;
 import production.text.TextMaster;
@@ -43,6 +44,12 @@ public class GnomeGameEngine extends GameEngine implements EventListener {
 
     @Override
     protected void onProcessInput() {
+        while (Keyboard.next()) {
+            KeyPresses.Add(Keyboard.getEventKey(),
+                    Keyboard.getEventCharacter(),
+                    Keyboard.getEventKeyState());
+        }
+
         boolean weDidSomething = false;
 
         if (Keyboard.isKeyDown(Keyboard.KEY_LEFT)) {
@@ -117,11 +124,17 @@ public class GnomeGameEngine extends GameEngine implements EventListener {
 
         TextMaster.init();
 
-        FontType font = new FontType(Data.fontAtlasID, new File("src/main/resources/textures/mono.fnt"));
-        GUIText text = new GUIText("Welcome to Lumbridge!", 3f, font, new Vector2f(0f, 0f), 1f, true);
+        FontType font = new FontType(Data.fontAtlasID,
+                new File("src/main/resources/textures/mono.fnt"));
+        GUIText text = new GUIText("Welcome to Lumbridge!", 3f,
+                font, new Vector2f(0f, 0f), 1f,
+                true);
         text.setColour(1, 1, 0);
 
         serverMsgs = new LinkedList<>();
+
+        KeyPresses.Init(8);
+        ChatManager.Init();
 
         return init = true;
     }
@@ -202,6 +215,8 @@ public class GnomeGameEngine extends GameEngine implements EventListener {
                 }
             }
         }
+
+        ChatManager.Update();
     }
 
     @Override

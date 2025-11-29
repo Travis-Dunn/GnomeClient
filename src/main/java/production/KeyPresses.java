@@ -28,6 +28,8 @@ public class KeyPresses {
             KeyPresses.cap = cap;
         } else {
             KeyPresses.cap = DEFAULT_CAP;
+            /* We need to handle this in a non-fatal fashion because this might
+                be exposed via config file */
             LogSession(LogLevel.DEBUG, ErrStrCapOutOfBounds(cap));
         }
 
@@ -82,7 +84,7 @@ public class KeyPresses {
     public static char GetCurrentChar() { return character; }
     public static boolean GetCurrentPressed() {return pressed; }
 
-    private static final String CLASS = KeyPresses.class.getSimpleName();
+    public static final String CLASS = KeyPresses.class.getSimpleName();
     private static final String ERR_STR_FAILED_INIT = CLASS + " failed to " +
             "initialize because an OutOfMemoryError was encountered.\n";
     private static String ErrStrCapOutOfBounds(int c) {
